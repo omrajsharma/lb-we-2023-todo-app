@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.high {
+    border-left:4px solid rgb(127 0 255);
+}
+.medium {
+    border-left:4px solid rgb(237, 109, 3);
+}
+.low {
+    border-left:4px solid rgb(171, 171, 171);
+}
+
+.todo-item {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.delete-todo {
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
