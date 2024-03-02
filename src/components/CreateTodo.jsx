@@ -36,7 +36,7 @@ const priorityOptions = [
     {label: 'Low', value: 'low'},
 ]
 
-export default function CreateTodo() {
+export default function CreateTodo({fetchTodos}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -73,7 +73,8 @@ export default function CreateTodo() {
 
   const handleFormSubmit = async () => {
     validateForm();
-    axios.post('https://lb-we-2023-default-rtdb.asia-southeast1.firebasedatabase.app/todo.json', {task, description, priority, date});
+    const response = await axios.post('https://lb-we-2023-default-rtdb.asia-southeast1.firebasedatabase.app/todo.json', {task, description, priority, date});
+    fetchTodos();
     alert("Form submitted successfully ✨")
     resetForm();
     handleClose();
